@@ -161,9 +161,10 @@ p:last-child { margin-bottom: 0; }
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 34px; height: 34px;
+  /* width: 34px; height: 34px; */
+  width: 50px; height: 50px;
   border-radius: 50%;
-  background: var(--accent-ink);
+  /* background: var(--accent-ink); */
   color: var(--on-accent);
   font-family: var(--font-serif);
   font-size: 1.25rem;
@@ -171,6 +172,9 @@ p:last-child { margin-bottom: 0; }
   line-height: 1;
   padding-bottom: 2px;
 }
+#logosvg path { fill: var(--text); }
+  /* background: var(--accent-ink); */
+
 .brand-name { font-family: var(--font-serif); font-size: 1.35rem; letter-spacing: -0.01em; }
 .brand-dot { color: var(--accent); }
 .brand-name-lg { font-size: 1.6rem; }
@@ -383,6 +387,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
     padding: clamp(1.5rem, 5vw, 2.5rem) var(--gutter) 3rem;
     background: var(--bg); color: var(--text);
     overflow-y: auto;
+    min-height: calc(100vh - var(--header-h));
     opacity: 0; visibility: hidden; transform: translateY(-10px);
     transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
   }
