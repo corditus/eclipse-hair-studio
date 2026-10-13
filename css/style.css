@@ -90,8 +90,10 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 img { max-width: 100%; height: auto; display: block; }
+a, button, .tile { touch-action: manipulation; }
 a { color: var(--accent-ink); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 button { font: inherit; color: inherit; }
@@ -221,6 +223,7 @@ p:last-child { margin-bottom: 0; }
   :root:not([data-theme="light"]) .theme-toggle .i-moon { display: block; }
 }
 .menu-toggle { display: none; }
+body.nav-open { overflow: hidden; }
 
 /* Hero */
 .hero {
@@ -395,16 +398,17 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .visit-grid { grid-template-columns: 1fr; }
   .service { flex-direction: column; gap: 0.5rem; }
   .service-meta { flex-direction: row; align-items: baseline; gap: 1rem; }
+  .hero-inner { padding-bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px)); }
   .mobile-bar {
     display: grid; grid-template-columns: 1fr auto; gap: 0.6rem;
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
-    padding: 0.65rem var(--gutter) calc(0.65rem + env(safe-area-inset-bottom, 0));
+    padding: 0.65rem var(--gutter) calc(0.65rem + env(safe-area-inset-bottom, 0px));
     background: rgba(250, 247, 242, 0.92);
     backdrop-filter: saturate(150%) blur(12px);
     -webkit-backdrop-filter: saturate(150%) blur(12px);
     border-top: 1px solid var(--border);
   }
-  body { padding-bottom: 76px; }
+  body { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
   .scroll-cue { display: none; }
 }
 @media (max-width: 720px) and (prefers-color-scheme: dark) {
@@ -412,6 +416,21 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 }
 @media (max-width: 720px) {
   :root[data-theme="dark"] .mobile-bar { background: rgba(30, 27, 24, 0.92); }
+}
+@media (max-width: 640px) {
+  .reviews { grid-template-columns: 1fr; }
+  .hero-cta, .visit-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn, .visit-cta .btn { width: 100%; }
+  .lb-stage img { max-height: 60vh; }
+}
+@media (max-width: 420px) {
+  :root { --gutter: 1.15rem; }
+  h1 { font-size: clamp(2.15rem, 1.4rem + 7vw, 2.75rem); }
+  h2 { font-size: clamp(1.7rem, 1.2rem + 5vw, 2.1rem); }
+  .gallery { column-gap: 0.5rem; }
+  .tile { margin-bottom: 0.5rem; border-radius: 8px; }
+  .footer-nav { gap: 0.5rem 1.25rem; }
+  .footer-nav a, .contact-list a { padding-block: 0.35rem; }
 }
 
 /* 10. Motion & print preferences ----------------------------------- */

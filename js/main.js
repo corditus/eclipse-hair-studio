@@ -47,11 +47,13 @@
   function closeNav() {
     if (!header) return;
     header.classList.remove('nav-open');
+    document.body.classList.remove('nav-open');
     if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
   }
   if (menuToggle && header) {
     menuToggle.addEventListener('click', function () {
       var open = header.classList.toggle('nav-open');
+      document.body.classList.toggle('nav-open', open);
       menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   }
