@@ -28,7 +28,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@300..600&display=swap">
 
-  <link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
+  <!-- <link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high"> -->
+   <link rel="preload" as="image" href="img/hero.jpg"
+      media="(min-width: 641px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-mobile.jpg"
+      media="(max-width: 640px)" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add('js');</script>
 
@@ -225,8 +229,23 @@
     <!-- 2. Hero -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-media">
-        <img src="img/hero.jpg" width="1920" height="1280" fetchpriority="high" decoding="async">
+        <!-- <img src="img/hero.jpg" width="1920" height="1280" fetchpriority="high" decoding="async"> -->
         <!-- alt="A client with softly waved, warm-toned hair lit by window light." -->
+         <!-- Desktop / tablet -->
+        <img
+          class="hero-img hero-img--desktop"
+          src="img/hero.jpg"
+          width="1920" height="1280"
+          fetchpriority="high" decoding="async"
+          alt="">
+
+        <!-- Mobile only -->
+        <img
+          class="hero-img hero-img--mobile"
+          src="img/hero-mobile.jpg"
+          width="1080" height="1350"
+          fetchpriority="high" decoding="async"
+          alt="">
       </div>
       <div class="wrap hero-inner">
         <p class="eyebrow reveal">Morwell · Est. 2016</p>

@@ -240,18 +240,35 @@ body.nav-open { overflow: hidden; }
   color: #fff;
   overflow: hidden;
 }
-.hero-media { position: absolute; inset: 0; }
-.hero-media img {
+.hero-media { position: absolute; inset: 0; overflow: hidden;}
+/* Both images fill the same box */
+.hero-media .hero-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center center; /* default crop */
 }
+/* Mobile image hidden by default */
+.hero-img--mobile {
+  display: none;
+}
+/* Mobile only: show mobile image, hide desktop one */
 @media (max-width: 640px) {
+  .hero-img--desktop { display: none; }
+  .hero-img--mobile  { display: block; }
+
+  /* Nudge the crop 40px left on mobile, if needed */
+  .hero-img--mobile {
+    object-position: calc(50% - 40px) center;
+  }
+}
+/* @media (max-width: 640px) {
   .hero-media img {
     object-position: calc(26%) center;
   }
-}
+} */
 .hero::after {
   content: ""; position: absolute; inset: 0;
   background:
