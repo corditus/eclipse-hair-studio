@@ -1,15 +1,13 @@
 - ask ash to supply
 	- photos
-		- various haircut examples %%insta%%
-		- ~~self photo~~
-		- photo of the studio
-	- prices
-	- reviews %%maybe can get from insta%%
+		- various haircut examples
+		- photo presenting the studio space (no people)
+		- "action shots" of you working on hair or other beauty service
+	- prices & services list
+	- reviews
 	- contact
-		- phone
-		- email
-		- address
+		- phone same as your personal mobile? 
+		- ? email
 		- opening hours
-		- insta EclipseHairAndBeauty_
 	- content
 		- how many years have you been cutting hair
