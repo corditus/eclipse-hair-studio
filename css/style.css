@@ -241,7 +241,17 @@ body.nav-open { overflow: hidden; }
   overflow: hidden;
 }
 .hero-media { position: absolute; inset: 0; }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+@media (max-width: 640px) {
+  .hero-media img {
+    object-position: calc(35%) center;
+  }
+}
 .hero::after {
   content: ""; position: absolute; inset: 0;
   background:
