@@ -249,7 +249,7 @@ body.nav-open { overflow: hidden; }
 }
 @media (max-width: 640px) {
   .hero-media img {
-    object-position: calc(35%) center;
+    object-position: calc(26%) center;
   }
 }
 .hero::after {
